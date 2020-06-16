@@ -5,5 +5,5 @@ fn main() {
     let vs = vec!["a", "b", "c", "b", "c", "d"];
     let num = rng.gen_range(1, 170);
     let q = vs[rng.gen_range(0, 5)];
-    println!("{}", format!("Let's challenge https://atcoder.jp/contests/abc{}/tasks/abc{}_{}", num, num, q));
+    println!("{}", format!("Lets challenge https://atcoder.jp/contests/abc{}/tasks/abc{}_{}", num, num, q));
 }
