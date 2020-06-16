@@ -24,6 +24,6 @@ jobs:
       with:
         command: build
     - name: run
-      uses: actions-rs/cargo@v1
-      with:
-        command: run
+      run: text=`cargo run -q`
+    - name: echo
+      run: echo $text
