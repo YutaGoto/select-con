@@ -20,15 +20,14 @@ jobs:
       - run:
           name: run
           command: |
-            text=`cargo run -q` && \
-            echo $text && \
-            echo 'export TEXT_MESSAGE="$text"' >> $BASH_ENV
+            TEXT=`cargo run -q`
+            echo "export TEXT_MESSAGE='${text}'" >> $BASH_ENV
       - run:
-          command: echo ${TEXT_MESSAGE}
+          command: echo "${TEXT_MESSAGE}"
       - slack/notify:
           channel: ${SLACK_CHANNEL}
           color: '#42e2f4'
-          message: ${TEXT_MESSAGE}
+          message: "${TEXT_MESSAGE}"
           webhook: ${SLACK_WEBHOOK}
 
 workflows:
