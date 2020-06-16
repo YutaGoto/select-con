@@ -21,6 +21,7 @@ jobs:
           name: run
           command: |
             text=`cargo run -q` && \
+            echo $text && \
             echo 'export TEXT_MESSAGE=${text}' >> $BASH_ENV
       - run:
           command: echo ${TEXT_MESSAGE}
