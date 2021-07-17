@@ -35,13 +35,3 @@ workflows:
   build:
     jobs:
       - build-slack
-  nightly_workflow:
-    triggers:
-      - schedule:
-          cron: "0 11 * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - build-slack
