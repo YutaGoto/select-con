@@ -11,7 +11,9 @@ jobs:
     working_directory: ~/select-con
     steps:
       - checkout
-      - rust/build
+      - run:
+          name: build
+          command: cargo build 
       - run:
           name: run
           command: |
