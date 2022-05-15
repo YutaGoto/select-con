@@ -2,21 +2,16 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@3.4.2
-
-executors:
-  rust:
-    docker:
-      - image: circleci/rust
+  rust: circleci/rust@1.6.0
 
 jobs:
   build-slack:
-    executor: rust
+    docker:
+      - image: cimg/base:stable
     working_directory: ~/select-con
     steps:
       - checkout
-      - run:
-          name: build
-          command: cargo build
+      - rust/build
       - run:
           name: run
           command: |
