@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  slack: circleci/slack@3.4.2
-  rust: circleci/rust@1.6.0
+  slack: circleci/slack@4.13.2
+  rust: circleci/rust@1.6.1
 
 jobs:
   build-slack:
@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: build
-          command: cargo build 
+          command: cargo build
       - run:
           name: run
           command: |
