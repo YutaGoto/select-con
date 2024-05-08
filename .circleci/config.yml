@@ -23,9 +23,26 @@ jobs:
           command: echo "${TEXT_MESSAGE}"
       - slack/notify:
           channel: ${SLACK_CHANNEL}
-          color: '#42e2f4'
-          message: "${TEXT_MESSAGE}"
-          webhook: ${SLACK_WEBHOOK}
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Todays AtCoder",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<${TEXT_MESSAGE}>"
+                  }
+                }
+              ]
+            } 
 
 workflows:
   version: 2
